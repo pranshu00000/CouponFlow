@@ -8,7 +8,7 @@ const ClaimCoupon = () => {
   const handleClaim = async () => {
     try {
       const res = await axios.post(
-        '/api/coupons/claim',
+        'https://couponflow.onrender.com/api/coupons/claim',
         {},
         { withCredentials: true }
       );
