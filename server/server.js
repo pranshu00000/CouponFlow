@@ -11,8 +11,13 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
-app.use(cors({ origin: true, credentials: true }));
-app.use(express.json());
+app.use(cors({
+    origin: ['http://localhost:5173','https://coupon-flow.vercel.app','https://couponflow.onrender.com' ], // Replace with your frontend URL
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+  app.use(express.json());
 app.use(cookieParser());
 
 // API routes
