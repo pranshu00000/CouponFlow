@@ -28,9 +28,7 @@ const AdminPanel = () => {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setCoupons(Array.isArray(res.data) ? res.data : (res.data.coupons || []));
-            console.log('API response:', res.data);
-            console.log('Type of response:', typeof res.data);
-            console.log('Is array?', Array.isArray(res.data));
+         
         } catch (error) {
             console.error(error);
             setCoupons([]);
@@ -44,9 +42,7 @@ const AdminPanel = () => {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setClaims(Array.isArray(res.data) ? res.data : (res.data.claims || []));
-            console.log('Claims API response:', res.data);
-    console.log('Type of claims response:', typeof res.data);
-    console.log('Is claims array?', Array.isArray(res.data));
+           
         } catch (error) {
             console.error(error);
             setClaims([]);
